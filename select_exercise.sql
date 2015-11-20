@@ -13,5 +13,8 @@ SELECT 'Records sold' AS 'Millions of';
 SELECT * FROM albums WHERE sales > 20;
 
 SELECT 'In the 90''s' AS 'Albums sold';
-SELECT * FROM albums WHERE release_date BETWEEN 1990 and 2000;
+SELECT * FROM albums WHERE release_date BETWEEN 1990 and 1999;
+
+SELECT 'Rock Albums' AS 'All the';
+SELECT * FROM albums WHERE genre LIKE '%rock%';
 
