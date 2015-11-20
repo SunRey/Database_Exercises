@@ -1,0 +1,1 @@
+My mysql exercises for CodeUp
