@@ -34,3 +34,8 @@ SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE '%q%'
 AND last_name NOT LIKE '%qu%';
+
+SELECT DISTINCT first_name, last_name, birth_date
+FROM employees
+WHERE birth_date LIKE '%-03-04'
+ORDER BY birth_date;
