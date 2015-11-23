@@ -6,7 +6,7 @@ WHERE gender = 'M'
 	OR first_name = 'Vidya' 
 	OR first_name = 'Maya'
 )
-ORDER BY first_name ASC, last_name ASC;
+ORDER BY last_name, first_name;
 
 SELECT first_name, last_name, emp_no
 FROM employees
