@@ -9,7 +9,8 @@ AND (
 
 SELECT first_name, last_name, emp_no
 FROM employees
-WHERE last_name LIKE 'E%';
+WHERE last_name LIKE 'E%'
+OR last_name LIKE '%e';
 
 SELECT first_name, last_name, hire_date, emp_no
 FROM employees
