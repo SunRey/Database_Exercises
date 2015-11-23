@@ -1,6 +1,8 @@
 SELECT first_name, last_name, emp_no
 FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya');
+WHERE first_name = 'Irena' 
+OR first_name = 'Vidya' 
+OR first_name = 'Maya';
 
 SELECT first_name, last_name, emp_no
 FROM employees
