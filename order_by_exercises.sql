@@ -11,7 +11,8 @@ ORDER BY last_name, first_name;
 SELECT first_name, last_name, emp_no
 FROM employees
 WHERE last_name LIKE 'E%'
-OR last_name LIKE '%e';
+OR last_name LIKE '%e'
+ORDER BY emp_no;
 
 SELECT first_name, last_name, emp_no
 FROM employees
