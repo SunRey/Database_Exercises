@@ -37,10 +37,18 @@ SELECT first_name, last_name, birth_date
 FROM employees
 WHERE birth_date LIKE '%12-25%';
 
+SELECT CONCAT(first_name, ' ', last_name) AS full_name, COUNT(*) AS same_name_count
+FROM employees
+WHERE last_name LIKE '%q%'
+AND last_name NOT LIKE '%qu%'
+GROUP BY full_name
+ORDER BY same_name_count DESC;
+
 SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE '%q%'
-AND last_name NOT LIKE '%qu%';
+AND last_name NOT LIKE '%qu'
+
 
 SELECT DISTINCT first_name, last_name, birth_date
 FROM employees
