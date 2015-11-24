@@ -54,3 +54,8 @@ SELECT DISTINCT first_name, last_name, birth_date
 FROM employees
 WHERE birth_date LIKE '%-03-04'
 ORDER BY birth_date;
+
+SELECT CONCAT(emp_no, ' - ', last_name, ', ', first_name) AS full_name, birth_date AS DOB
+FROM employees
+ORDER BY emp_no
+LIMIT 10;
