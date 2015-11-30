@@ -49,3 +49,11 @@ JOIN departments AS d ON d.dept_no = de.dept_no
 WHERE d.dept_no = 'd009' AND t.to_date > now()
 GROUP BY t.title;
 
+SELECT d.dept_name AS 'Departmant Name', CONCAT(e.first_name, ' ', e.last_name) AS 'Name', s.salary AS Salary
+FROM salaries AS s
+JOIN employees AS e ON e.emp_no = s.emp_no
+JOIN dept_manager AS dm ON dm.emp_no = e.emp_no
+JOIN departments AS d ON d.dept_no = dm.dept_no
+WHERE s.to_date > now() AND dm.to_date > now();
+
+
