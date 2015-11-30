@@ -56,4 +56,11 @@ JOIN dept_manager AS dm ON dm.emp_no = e.emp_no
 JOIN departments AS d ON d.dept_no = dm.dept_no
 WHERE s.to_date > now() AND dm.to_date > now();
 
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee Name', d.dept_name AS 'Department Name', CONCAT(man.first_name, ' ', man.last_name) AS 'Manager Name'
+FROM employees AS e
+JOIN dept_emp AS de ON e.emp_no = de.emp_no
+JOIN departments AS d ON de.dept_no = d.dept_no
+JOIN dept_manager AS dm ON d.dept_no = dm.dept_no
+JOIN employees AS man ON man.emp_no = dm.emp_no
+WHERE dm.to_date > now() AND de.to_date > now();
 
