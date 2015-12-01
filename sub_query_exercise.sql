@@ -11,7 +11,7 @@ WHERE hire_date IN (
 	SELECT hire_date
 	FROM employees
 	WHERE emp_no = 101010
-	);
+);
 
 SELECT title AS 'Title', emp_no AS 'Employee No'
 FROM titles AS t
@@ -19,8 +19,7 @@ WHERE emp_no IN (
 	SELECT emp_no
 	FROM employees
 	WHERE first_name = 'Aamod'
-	)
-;
+);
 
 SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Full Name', title AS 'Title'
 FROM titles AS t
@@ -32,6 +31,28 @@ FROM employees AS e
 RIGHT JOIN titles AS t
   ON e.emp_no = t.emp_no
 WHERE first_name = 'Aamod';
+
+SELECT CONCAT(first_name, ' ', last_name) AS 'Full Name', gender
+FROM employees
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM dept_manager
+    WHERE to_date > NOW()
+)
+AND gender = 'F';
+
+SELECT dept_name
+FROM departments
+WHERE dept_no IN (
+    SELECT dept_no
+    FROM dept_manager
+    WHERE emp_no IN (
+        SELECT emp_no
+        FROM employees
+        WHERE gender = 'F'
+    )
+    AND to_date > NOW()
+);
 
 SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Name', d.dept_name AS 'Department Name', e.gender AS 'Gender'
 FROM employees AS e
